@@ -103,3 +103,30 @@ if multi % 2 == 0:
     print('O vetor é par')
 elif multi % 2 != 0:
     print('O vetor é impar')
+    
+print('=== Ex 4 ===')    
+seed_rand = np.random.seed(10)
+arr_4x4 = np.random.randint(1, 51, 16)
+mtz_4x4 = arr_4x4.reshape(4, 4)
+print('matriz:\n', mtz_4x4)
+
+#media de cada linha da matriz 4x4
+media_linhas = np.mean(mtz_4x4, axis=1)
+print('\nMédia de cada linha:', media_linhas)
+
+#media de cada coluna da matriz 4x4
+media_colunas = np.mean(mtz_4x4, axis=0)
+print('\nMedia de cada coluna:', media_colunas)
+
+print('\nMaior número da média de linhas:', media_linhas.max())
+
+print('\nMaior número da média colunas:', media_colunas.max())
+
+valores, contagens = np.unique(mtz_4x4, return_counts=True)
+
+print(f"\nc) Contagem de aparições:")
+for valor, count in zip(valores, contagens):
+    print(f"Número {valor}: aparece {count} vez(es)")
+
+numeros_2_vezes = valores[contagens == 2]
+print(f"\nNúmeros que aparecem 2 vezes: {numeros_2_vezes}")
