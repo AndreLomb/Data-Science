@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+
+# Instalações do pip
+pip-wheel-metadata/
+pip-delete-this-directory.txt
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Credenciais e configurações sensíveis
+secrets.py
+config.ini
+*.key
+*.pem
+*.crt
