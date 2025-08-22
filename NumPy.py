@@ -30,55 +30,46 @@ arr_order = np.sort(arr_concat)
 print('Array ordenado:', arr_order)
 
 print('===Ex 3===')
-#criar um array 2x2
-mtz = np.array[[[0, 0], [0, 0]]]
+# criar um array 2x2
+mtz = np.zeros(4).reshape(2, 2)
 print('Matriz original:\n', mtz)
 
 linha_bomba = np.random.randint(0, 2)
 coluna_bomba = np.random.randint(0, 2)
+
 mtz[linha_bomba, coluna_bomba] = 1
 
-jogadas_feitas = 0
-max_jogadas = 3
-posicoes_reveladas = [[False, False], [False, False]]
+visivel = np.array([['?', '?'], ['?', '?']])
 
-while jogadas_feitas < max_jogadas:
-    print(f'\n--- Jogada {jogadas_feitas + 1} de {max_jogadas} ---')
+attempts = 0
+max_attempts = 3
 
-    print('\nEscolha uma posição para revelar:')
-    linha = input('insira a linha (0 ou 1): ')
-    coluna = input('insira a coluna (0 ou 1): ')
+for tentativa in range(max_attempts):
+    print(f'\nTentativa {tentativa + 1}/{max_attempts}===')
+    print(visivel)
 
-    if linha not in ['0', '1'] or coluna not in ['0', '1']:
-        print('apenas 0 ou 1')
+    l = int(input('Insira a linha(0-1): '))
+    c = int(input('Insira a coluna(0-1): '))
+
+    if visivel[l, c] != '?':
+        print('position revealed already!!')
         continue
 
-    linha = int(linha)
-    coluna = int(coluna)
-
-    if posicoes_reveladas[linha][coluna]:
-        print('posição já revelada')
-        continue
-
-    posicoes_reveladas[linha][coluna] = True
-    jogadas_feitas += 1
-    valor_revelado = matriz[linha][coluna]
-
-    print(f'Posição [{linha}, {coluna}] revelada: {valor_revelado}')
-
-    if valor_revelado == 1:
+    if l == linha_bomba and c == coluna_bomba:
+        visivel[l, c] = 'X'
         print('Game Over! :( Try again!')
         break
-    
-    posicoes_seguras_encontradas = 0
-    for i in range(2):
-        for j in range(2):
-            if matriz[i][j] == 0 and posicoes_reveladas[i][j]:
-                posicoes_seguras_encontradas += 1
+    else:
+        visivel[l, c] = '0'
+        print('safe')
+        attempts += 1
 
-    if posicoes_seguras_encontradas == 3:
-        print('Congratulations! You beat the game! :)')
-        break
+    print('\nCampo atual:')
+    print(visivel)
+
+    if attempts == max_attempts or visivel[l, c] == 'X':
+        print('You win! :)')
+        break   
 
 print('=== Ex 3 ===')
 arr  = np.arange(0, 50, 2)
