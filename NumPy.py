@@ -29,7 +29,7 @@ arr_order = np.sort(arr_concat)
 
 print('Array ordenado:', arr_order)
 
-print('===Ex 3===')
+print('===Ex 2===')
 # criar um array 2x2
 mtz = np.zeros(4).reshape(2, 2)
 print('Matriz original:\n', mtz)
