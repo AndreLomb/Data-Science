@@ -1,7 +1,12 @@
 import numpy as np
 
 print('===Ex 1===')
-
+#1. Crie dois NumPy Arrays unidimensionais de tamanho 8: um formado apenas
+#por 1’s e outro formado por números aleatórios entre 0 e 9. Some estes dois
+#NumPy Arrays e guarde o resultado dentro de um terceiro NumPy Array. Por
+#fim, faça o seguinte: a. Se a soma de todos os elementos do Array resultante for >= 40, remodele este
+#NumPy Array para se tornar uma matriz com mais linhas do que colunas. Senão,
+#remodele para que se torne uma matriz com mais colunas do que linhas.
 arr1 = np.ones(8)
 arr2 = np.random.randint(0, 9, 8)
 arr3 = arr1 + arr2
@@ -17,7 +22,9 @@ else:
     print('Eis a nova matriz coluna: \n', matriz)
 
 print('===Ex 2===')
-
+#Crie dois NumPy Arrays unidimensionais: um de números pares de 0 à 51 e
+#outro também de números pares de 100 até 50. Em seguida, os concatene e
+#mostre os resultados ordenados
 arrEven = np.arange(0, 51, 2)
 arrEven2 = np.arange(100, 50, -2) 
 
@@ -29,7 +36,7 @@ arr_order = np.sort(arr_concat)
 
 print('Array ordenado:', arr_order)
 
-print('===Ex 2===')
+print('===Ex 3===')
 # criar um array 2x2
 mtz = np.zeros(4).reshape(2, 2)
 print('Matriz original:\n', mtz)
@@ -71,7 +78,7 @@ for tentativa in range(max_attempts):
         print('You win! :)')
         break   
 
-print('=== Ex 3 ===')
+print('=== Ex 4 ===')
 arr  = np.arange(0, 50, 2)
 mtz_any = arr.reshape(5, 5)
 # arr = np.arange(0, 18, 3)
