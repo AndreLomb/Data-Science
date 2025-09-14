@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
-dfPaises = pd.read_csv('paises.csv',
-                 delimiter=';',
-                 encoding='utf-8')
+dfPaises = pd.read_csv('../paises.csv',
+                       delimiter=';',
+                       encoding='utf-8')
 
 #calculando a população mundial
 total_population = np.sum(dfPaises['Population'])
